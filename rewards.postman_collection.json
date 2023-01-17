@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "8048ef99-0994-4d90-91a0-ddf98ae5046f",
+		"name": "rewards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test rewards",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"user1\",\r\n        \"transactions\": [\r\n            {\r\n                \"transactionId\": 1,\r\n                \"transactionValue\": 170,\r\n                \"transactionDate\": \"09/18/2022\"\r\n            },\r\n            {\r\n                \"transactionId\": 2,\r\n                \"transactionValue\": 55,\r\n                \"transactionDate\": \"10/17/2022\"\r\n            },\r\n            {\r\n                \"transactionId\": 3,\r\n                \"transactionValue\": 150,\r\n                \"transactionDate\": \"11/17/2022\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rewards/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rewards",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "test rewards",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\": \"user1\",\r\n        \"transactions\": [\r\n            {\r\n                \"transactionId\": 1,\r\n                \"transactionValue\": 170,\r\n                \"transactionDate\": \"09/18/2022\"\r\n            },{\r\n                \"transactionId\": 11,\r\n                \"transactionValue\": 170,\r\n                \"transactionDate\": \"09/18/2022\"\r\n            },\r\n            {\r\n                \"transactionId\": 2,\r\n                \"transactionValue\": 55,\r\n                \"transactionDate\": \"10/17/2022\"\r\n            },\r\n            {\r\n                \"transactionId\": 3,\r\n                \"transactionValue\": 150,\r\n                \"transactionDate\": \"11/17/2022\"\r\n            }\r\n        ]\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rewards/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rewards",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Nov 2022 03:05:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"user1\",\n        \"monthlyTransactions\": [\n            {\n                \"month\": \"OCTOBER\",\n                \"transactions\": [\n                    {\n                        \"points\": 5,\n                        \"transactionId\": 2,\n                        \"transactionValue\": 55,\n                        \"transactionDate\": \"10/17/2022\"\n                    }\n                ],\n                \"totalMonthRewards\": 5\n            },\n            {\n                \"month\": \"SEPTEMBER\",\n                \"transactions\": [\n                    {\n                        \"points\": 190,\n                        \"transactionId\": 11,\n                        \"transactionValue\": 170,\n                        \"transactionDate\": \"09/18/2022\"\n                    },\n                    {\n                        \"points\": 190,\n                        \"transactionId\": 1,\n                        \"transactionValue\": 170,\n                        \"transactionDate\": \"09/18/2022\"\n                    }\n                ],\n                \"totalMonthRewards\": 380\n            },\n            {\n                \"month\": \"NOVEMBER\",\n                \"transactions\": [\n                    {\n                        \"points\": 150,\n                        \"transactionId\": 3,\n                        \"transactionValue\": 150,\n                        \"transactionDate\": \"11/17/2022\"\n                    }\n                ],\n                \"totalMonthRewards\": 150\n            }\n        ],\n        \"totalRewardPoints\": 535,\n        \"totalPurchases\": 545\n    }\n]"
+				}
+			]
+		}
+	]
+}
